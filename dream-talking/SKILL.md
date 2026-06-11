@@ -40,6 +40,7 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 - **短梦/信息少**：先给浅层解析，再用一句话提示还需要哪些信息，不要拒绝。
 - **深层解析**：梦里有明显矛盾、反复出现的人/地点、强烈情绪、现实身份冲突，或用户要求“更准/深入/结合现实”，先给初判，再主动提出 2 到 4 个高价值追问。
 - **更细意象解释**：读取 `references/dream-symbols.md` 中相关意象。
+- **传统象征不够稳**：读取 `references/zhougong-patterns.md`，用民间解梦案例校准传统层，但输出时仍要弱化为“传统上常被理解为”。
 - **高风险梦境**：读取 `references/safety-rules.md`，降低刺激和恐惧。
 - **短视频/小红书/朋友圈/口播稿**：读取 `references/video-templates.md`，按内容平台生成文案。
 
@@ -312,6 +313,7 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 
 - `references/dream-symbols.md`：梦境意象内容库。用户要更细解释，或梦里有多个具体意象时读取。
 - `references/deepening-questions.md`：深挖问题库。用户要更准、梦境反复出现、或现实背景会明显影响判断时读取。
+- `references/zhougong-patterns.md`：传统周公/民间解梦案例提炼。传统层需要更有出处、更细分动作时读取；不要照抄网页原文。
 - `references/safety-rules.md`：安全边界。梦涉及死亡、疾病、自伤、灾难，或用户很害怕时读取。
 - `references/video-templates.md`：短视频、小红书、口播稿模板。用户明确要内容创作时读取。
 
