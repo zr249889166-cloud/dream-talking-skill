@@ -1,6 +1,6 @@
 ---
 name: dream-talking
-description: Interpret dreams in Chinese by combining Zhougong-style folk symbolism, modern emotional/psychological reflection, and shareable short-form copywriting. Use when the user asks to 解梦, interpret dream symbols, analyze a dream, explain what a dream may mean, ask for deeper dream analysis with recent-life context, or create Xiaohongshu/Douyin/short-video scripts about dreams; especially for Chinese-language dream journaling, AI self-media content, gentle emotional analysis, and non-fortune-telling dream explanations.
+description: Interpret dreams in Chinese by combining Zhougong-style folk symbolism, Yijing/I Ching symbolic thinking, modern emotional/psychological reflection, and shareable short-form copywriting. Use when the user asks to 解梦, interpret dream symbols, analyze a dream, explain what a dream may mean, ask for deeper dream analysis with recent-life context, or create Xiaohongshu/Douyin/short-video scripts about dreams; especially for Chinese-language dream journaling, AI self-media content, gentle emotional analysis, and non-fortune-telling dream explanations.
 ---
 
 # 梦里有话 AI 解梦 Skill
@@ -12,8 +12,9 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 把梦解释成三层：
 
 1. 传统文化里的象征说法
-2. 现代心理里的情绪和关系线索
-3. 适合中文社交媒体传播的人话表达
+2. 易经象义里的阴阳、动静、时位与变化
+3. 现代心理里的情绪和关系线索
+4. 适合中文社交媒体传播的人话表达
 
 目标是温和、有趣、有共鸣，不吓人、不算命、不诊断。
 
@@ -41,6 +42,7 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 - **深层解析**：梦里有明显矛盾、反复出现的人/地点、强烈情绪、现实身份冲突，或用户要求“更准/深入/结合现实”，先给初判，再主动提出 2 到 4 个高价值追问。
 - **更细意象解释**：读取 `references/dream-symbols.md` 中相关意象。
 - **传统象征不够稳**：读取 `references/zhougong-patterns.md`，用民间解梦案例校准传统层，但输出时仍要弱化为“传统上常被理解为”。
+- **需要易经视角**：读取 `references/yijing-patterns.md`，用阴阳、八卦、变易、时位来增强解释；不要无依据起卦或预测吉凶。
 - **高风险梦境**：读取 `references/safety-rules.md`，降低刺激和恐惧。
 - **短视频/小红书/朋友圈/口播稿**：读取 `references/video-templates.md`，按内容平台生成文案。
 
@@ -155,6 +157,9 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 **传统象征**  
 1 到 2 段，每段最多 2 句。
 
+**易经象义**  
+当梦里有明显自然意象、动静冲突、人生阶段变化、方向/位置/时间错位时可加入。只讲象义，不起卦断事。
+
 **心理主线**  
 2 到 4 段短句。先说重点，再解释梦里的关键矛盾。
 
@@ -212,6 +217,21 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 - 结局意义：最后是脱险、失败、和解、跑掉，还是突然醒来。
 
 只能用“可能”“更像是”“也许对应”，不要诊断用户。
+
+### 易经象义
+
+不是每个梦都必须写。适合以下情况时加入一小段：
+
+- 梦里有明显自然象：天、地、水、火、雷、风、山、泽。
+- 梦里有强烈动静冲突：想走但停住、被困但想动、旧场景里出现新身份。
+- 梦里有时间线错位、身份错位、人生阶段转换。
+- 用户明确要求“易经角度”“卦象”“阴阳”。
+
+要求：
+
+- 只做象义分析，不临时起卦，不说“此卦预示……”。
+- 用“从易经象义看”“如果借八卦来说”“这更像……之象”。
+- 最多 1 到 2 段，不能喧宾夺主。
 
 ### 梦境倾向
 
@@ -364,6 +384,7 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 - `references/dream-symbols.md`：梦境意象内容库。用户要更细解释，或梦里有多个具体意象时读取。
 - `references/deepening-questions.md`：深挖问题库。用户要更准、梦境反复出现、或现实背景会明显影响判断时读取。
 - `references/zhougong-patterns.md`：传统周公/民间解梦案例提炼。传统层需要更有出处、更细分动作时读取；不要照抄网页原文。
+- `references/yijing-patterns.md`：易经象义增强层。需要阴阳、八卦、变易、时位视角时读取；不要用它做预测或硬起卦。
 - `references/safety-rules.md`：安全边界。梦涉及死亡、疾病、自伤、灾难，或用户很害怕时读取。
 - `references/video-templates.md`：短视频、小红书、口播稿模板。用户明确要内容创作时读取。
 
