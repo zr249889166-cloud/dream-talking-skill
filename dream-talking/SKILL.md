@@ -1,6 +1,6 @@
 ---
 name: dream-talking
-description: Interpret dreams in Chinese by combining Zhougong-style folk symbolism, modern emotional/psychological reflection, and shareable short-form copywriting. Use when the user asks to 解梦, interpret dream symbols, analyze a dream, explain what a dream may mean, or create Xiaohongshu/Douyin/short-video scripts about dreams; especially for Chinese-language dream journaling, AI self-media content, gentle emotional analysis, and non-fortune-telling dream explanations.
+description: Interpret dreams in Chinese by combining Zhougong-style folk symbolism, modern emotional/psychological reflection, and shareable short-form copywriting. Use when the user asks to 解梦, interpret dream symbols, analyze a dream, explain what a dream may mean, ask for deeper dream analysis with recent-life context, or create Xiaohongshu/Douyin/short-video scripts about dreams; especially for Chinese-language dream journaling, AI self-media content, gentle emotional analysis, and non-fortune-telling dream explanations.
 ---
 
 # 梦里有话 AI 解梦 Skill
@@ -38,6 +38,7 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 
 - **普通解梦**：用户描述一个梦，默认输出“标准解梦”。
 - **短梦/信息少**：先给浅层解析，再用一句话提示还需要哪些信息，不要拒绝。
+- **深层解析**：梦里有明显矛盾、反复出现的人/地点、强烈情绪、现实身份冲突，或用户要求“更准/深入/结合现实”，先给初判，再主动提出 2 到 4 个高价值追问。
 - **更细意象解释**：读取 `references/dream-symbols.md` 中相关意象。
 - **高风险梦境**：读取 `references/safety-rules.md`，降低刺激和恐惧。
 - **短视频/小红书/朋友圈/口播稿**：读取 `references/video-templates.md`，按内容平台生成文案。
@@ -53,15 +54,75 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 - 结局：脱险、失败、跑掉、醒来、未完成、恢复平静。
 - 现实背景：如果用户主动提供近况，要结合；不要编造背景。
 
-### 3. 决定是否追问
+### 3. 决定是否进入深挖
 
 默认先回答，不要因为信息少就卡住。
 
-只有在用户明确要“更准”“详细分析”“结合现实情况”时，才追问 1 到 3 个问题。
+如果梦境可以浅层解释，但缺少现实背景会影响深层判断，在标准解梦后追加“想往深处看，可以补充这几件事”。不要把追问放在开头挡住答案。
+
+优先追问 2 到 4 个问题，问题要具体、好回答、能区分不同解释。不要一次问超过 4 个。
 
 短梦可在结尾补一句：
 
 “如果想解得更准，还要看你当时害不害怕、梦最后怎么样、最近有没有类似的压力源。”
+
+## 二段式深挖机制
+
+### 第一段：初判 + 追问
+
+先完成标准解梦，再加一个短小的“深挖问题”模块。
+
+适合主动追问的情况：
+
+- 梦反复出现同一个人、地点、场景。
+- 梦里出现强烈代价感，比如得到一个人但失去房子、工作、身份。
+- 梦里有明显冲突：想靠近又逃跑、赢了又不安、回家但陌生。
+- 梦里出现旧人、前任、亲戚、去世亲人、老家、学校、考试、工作单位。
+- 用户说“最近总梦见”“莫名其妙”“醒来很乱”“不知道为什么”。
+- 梦境和现实身份冲突，比如已婚但梦见旧喜欢的人、工作稳定却梦见失业。
+
+深挖问题优先问这些维度：
+
+- 最近现实：最近有没有压力、变化、争执、选择、疲惫或重要节点？
+- 梦中情绪：梦里更强的是害怕、开心、愧疚、怀念、尴尬，还是失落？
+- 人物关系：梦里那个人在现实中代表什么感觉，不一定是本人。
+- 当前身份：现在的婚姻、工作、家庭、学业、责任感有没有让人喘不过气？
+- 结局余味：醒来后是轻松、空落、想联系、内疚，还是只是疑惑？
+
+格式：
+
+想往深处看，可以补充这几件事：
+
+1. 最近一两周，他/你现实里有没有明显压力或变化？
+2. 梦里最强的感觉是什么：开心、害怕、愧疚、怀念，还是空落？
+3. 梦里的那个人/地方，让他/你想到的是“那个人本身”，还是某段时期的自己？
+
+### 第二段：结合补充后的深层结论
+
+当用户补充现实背景后，不要重复完整模板。输出：
+
+1. “结合补充，前面哪条判断更明显”
+2. “这个梦更可能在处理什么现实感受”
+3. “不是哪种简单结论”
+4. “一个更落地的提醒”
+
+格式：
+
+结合你补充的情况，我会把重心从【原初判 A】往【更深判断 B】移一点。
+
+这个梦更像是在处理【现实情绪/身份冲突/关系记忆】，而不是在证明【不要下的结论】。
+
+真正的关键词可能不是【梦里表面意象】，而是【深层主题】。
+
+如果要落到现实里，今天可以先做一件小事：【具体建议】。
+
+### 追问克制
+
+- 不要像审问，不要问隐私细节超过梦境需要。
+- 不要问“你是不是还爱他/她”这种诱导题，改成“梦里那个人更像本人，还是某种感觉？”
+- 不要把补充背景变成唯一答案，只能说“这条线更明显”。
+- 如果用户只是想要简短解梦，不展开深挖。
+- 如果用户继续补充，可以连续收束判断，但每轮最多再问 1 到 2 个问题。
 
 ## 标准解梦输出
 
@@ -250,6 +311,7 @@ description: Interpret dreams in Chinese by combining Zhougong-style folk symbol
 ## 参考资料
 
 - `references/dream-symbols.md`：梦境意象内容库。用户要更细解释，或梦里有多个具体意象时读取。
+- `references/deepening-questions.md`：深挖问题库。用户要更准、梦境反复出现、或现实背景会明显影响判断时读取。
 - `references/safety-rules.md`：安全边界。梦涉及死亡、疾病、自伤、灾难，或用户很害怕时读取。
 - `references/video-templates.md`：短视频、小红书、口播稿模板。用户明确要内容创作时读取。
 
