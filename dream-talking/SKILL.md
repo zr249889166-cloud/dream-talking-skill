@@ -148,6 +148,21 @@ description: Use this skill when the user wants to interpret dreams, analyze dre
 - 梦里的失控，常常是现实里的硬撑。
 - 有些人出现在梦里，不是要回来，是你还没放下那段感受。
 
+### 小 tips
+
+在第 6 点后追加一个简短提示。
+
+必须说明：
+
+- 以上解析仅供娱乐、内容创作和自我观察
+- 不代表预言
+- 不能替代心理咨询、医学诊断或专业建议
+
+推荐格式：
+
+小 tips：
+以上解析仅供娱乐和自我观察，不代表预言，也不能替代专业建议。
+
 ## 判定逻辑
 
 不要只根据单个关键词判断梦。
@@ -245,3 +260,6 @@ description: Use this skill when the user wants to interpret dreams, analyze dre
 
 一句话总结：
 你不是掉进水里了，是最近脑子里的事情太满了。
+
+小 tips：
+以上解析仅供娱乐和自我观察，不代表预言，也不能替代专业建议。
